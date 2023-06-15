@@ -1,0 +1,105 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center"> Actualizacion de usuarios
+
+  </h3>
+  <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+    <div class="form-group">
+      <label> Nombre: </label>
+      <input type="text"
+      class="form-control"
+      id="name"
+      [(ngModel)]="usuario.name"
+      name="name"
+      required
+      placeholder="Digite su nombre"
+      #name="ngModel">
+      <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touch)">
+        <div *ngIf="name.errors.required">
+          Digite su nombre por favor
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label> Direccion: </label>
+      <input type="text"
+      class="form-control"
+      id="address"
+      [(ngModel)]="usuario.address"
+      name="address"
+      placeholder="Digite su direccion"
+      #address="ngModel">
+      <div class="alert alert-danger" *ngIf="address.invalid && (address.dirty || address.touch)">
+
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label> telefono: </label>
+      <input type="text"
+      class="form-control"
+      id="phone"
+      [(ngModel)]="usuario.phone"
+      name="phone"
+      placeholder="Digite su telefono"
+      #phone="ngModel">
+      <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touch)">
+
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label> pais: </label>
+      <input type="text"
+      class="form-control"
+      id="country"
+      [(ngModel)]="usuario.country"
+      name="country"
+      placeholder="Digite su pais"
+      #country="ngModel">
+      <div class="alert alert-danger" *ngIf="country.invalid && (country.dirty || country.touch)">
+
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label> Edad: </label>
+      <input type="text"
+      class="form-control"
+      id="age"
+      [(ngModel)]="usuario.age"
+      name="age"
+      placeholder="Digite su edad"
+      #age="ngModel">
+      <div class="alert alert-danger" *ngIf="age.invalid && (age.dirty || age.touch)">
+
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label> Email: </label>
+      <input type="text"
+      class="form-control"
+      id="email"
+      [(ngModel)]="usuario.email"
+      name="email"
+      required
+      pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+      placeholder="Digite su correo electronico"
+      #email="ngModel">
+      <div class="alert alert-danger" *ngIf= "email.invalid && (email.dirty || apellido.touched)">
+        <div *ngIf = "email.errors.required">
+          Digite su email por favor
+        </div>
+        <div *ngIf = "email.errors.pattern">
+          Por favor digite el email con el siguiente formato : user100@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-success" [disabled]="!usuarioForm.form.valid">Guardar</button>
+  </form>
+
+</div>

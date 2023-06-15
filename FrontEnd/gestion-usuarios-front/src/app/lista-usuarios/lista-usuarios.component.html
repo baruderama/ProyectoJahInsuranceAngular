@@ -1,0 +1,27 @@
+<h2>Lista empleados</h2>
+<table class ="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Foto</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td>
+        <img width="100px" src="{{usuario.image}}">
+      </td>
+      <td>{{usuario.name}}</td>
+      <td>{{usuario.email}}</td>
+      <td>{{usuario.password}}</td>
+      <td>
+        <button (click)="actualizarUsuario(usuario.id)" class = "btn btn-info"> Editar</button>
+        <button (click)="eliminarUsuario(usuario.id)" class = "btn btn-danger" style="margin-left : 10 px;"> Eliminar</button>
+        <button (click)="verDetalles(usuario.id)" class = "btn btn-primary" style="margin-left : 10 px;"> Detalles</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
